@@ -4,64 +4,32 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.hdr { width:100%; background-color:#dfdfdf; border:1px solid #dfdfdf;  border-spacing:5px; border-collapse:separate; }
-.main { width:100%; border-spacing:20px; border-collapse:collapse; }
-</style>
+<link rel="stylesheet" href="domdoodler.css">
+<script src="domdoodler.js"></script>
 <title>DOM Doodler</title>
 </head>
 <body>
-<noscript><hr />Please enable Javascript<hr /></noscript>
-<script>
-    var isDrawing = true;
-    var activeColor = 'black';
-    function changeColor(newColor)
-    {
-        activeColor = newColor;
-        document.doodle.colorStatus.value = activeColor;
-    }
-    function doodleMouseover(obj)
-    {
-        if (isDrawing) {
-            obj.style.backgroundColor = activeColor;
-        }
-    }
-    function doodleClick(obj)
-    {
-        toggleDrawing();
-        doodleMouseover(obj);
-    }
-    function toggleDrawing()
-    {
-        if (isDrawing) {
-            isDrawing = false;
-            document.doodle.drawingStatus.value = 'OFF';
-            return;
-        }
-        isDrawing = true;
-        document.doodle.drawingStatus.value = 'ON';
-    }
-</script>
+<noscript><p>Please enable Javascript</p></noscript>
 <form name="doodle" id="doodle">
 <table class="hdr">
 <tr>
 <td><a href="#" onclick="toggleDrawing();return false;">Doodler</a><input id="drawingStatus" value="ON" type="text" size="4">&nbsp;</td>
-<td bgcolor="black" onClick="changeColor('black');return false;">&nbsp;</td>
-<td bgcolor="gray" onClick="changeColor('gray');return false;">&nbsp;</td>
-<td bgcolor="silver" onClick="changeColor('silver');return false;">&nbsp;</td>
-<td bgcolor="white" onClick="changeColor('white');return false;">&nbsp;</td>
-<td bgcolor="navy" onClick="changeColor('navy');return false;">&nbsp;</td>
-<td bgcolor="blue" onClick="changeColor('blue');return false;">&nbsp;</td>
-<td bgcolor="teal" onClick="changeColor('teal');return false;">&nbsp;</td>
-<td bgcolor="aqua" onClick="changeColor('aqua');return false;">&nbsp;</td>
-<td bgcolor="green" onClick="changeColor('green');return false;">&nbsp;</td>
-<td bgcolor="olive" onClick="changeColor('olive');return false;">&nbsp;</td>
-<td bgcolor="lime" onClick="changeColor('lime');return false;">&nbsp;</td>
-<td bgcolor="maroon" onClick="changeColor('maroon');return false;">&nbsp;</td>
-<td bgcolor="purple" onClick="changeColor('purple');return false;">&nbsp;</td>
-<td bgcolor="red" onClick="changeColor('red');return false;">&nbsp;</td>
-<td bgcolor="fuchsia" onClick="changeColor('fuchsia');return false;">&nbsp;</td>
-<td bgcolor="yellow " onClick="changeColor('yellow');return false;">&nbsp;</td>
+<td class="cBlack" onClick="changeColor('black');return false;">&nbsp;</td>
+<td class="cGray" onClick="changeColor('gray');return false;">&nbsp;</td>
+<td class="cSilver" onClick="changeColor('silver');return false;">&nbsp;</td>
+<td class="cWhite" onClick="changeColor('white');return false;">&nbsp;</td>
+<td class="cNavy" onClick="changeColor('navy');return false;">&nbsp;</td>
+<td class="cBlue" onClick="changeColor('blue');return false;">&nbsp;</td>
+<td class="cTeal" onClick="changeColor('teal');return false;">&nbsp;</td>
+<td class="cAqua" onClick="changeColor('aqua');return false;">&nbsp;</td>
+<td class="cGreen" onClick="changeColor('green');return false;">&nbsp;</td>
+<td class="cOlive" onClick="changeColor('olive');return false;">&nbsp;</td>
+<td class="cLime" onClick="changeColor('lime');return false;">&nbsp;</td>
+<td class="cMaroon" onClick="changeColor('maroon');return false;">&nbsp;</td>
+<td class="cPurple" onClick="changeColor('purple');return false;">&nbsp;</td>
+<td class="cRed" onClick="changeColor('red');return false;">&nbsp;</td>
+<td class="cFuchsia" onClick="changeColor('fuchsia');return false;">&nbsp;</td>
+<td class="cYellow" onClick="changeColor('yellow');return false;">&nbsp;</td>
 <td><input id="colorStatus" value="black" type="text" size="8">&nbsp;</td>
 </td>
 </tr>
