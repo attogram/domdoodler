@@ -1,321 +1,284 @@
-<html><head><title>Doodle</title></head><script>
-
-var is_drawing = true;
-var active_color = 'black';
-function change_color( new_color ) {
-  active_color=new_color;
-  document.doodle.color_status.value=active_color;
-}
-function doodle_mouseover( obj ) {
-  if(is_drawing) { obj.style.backgroundColor=active_color; }
-}
-function doodle_click( obj ) {
-  toggle_drawing();
-  doodle_mouseover( obj );
-}
-function toggle_drawing() { 
-  if(is_drawing) { 
-   is_drawing = false;
-   document.doodle.drawing_status.value='OFF'; 
-  } else { 
-   is_drawing = true; 
-   document.doodle.drawing_status.value='ON';
-  }
-}
-</script>
-</head><body><form name="doodle" id="doodle">
-<table width="100%" cellpadding="4" cellspacing="0" border="1" bgcolor="#DFDFDF"><tr><td>
-<a href="#" onclick="toggle_drawing();return false;">Doodler</a> 
-<input id="drawing_status" value="ON" type="text" size="4">&nbsp;</td>
-
-
-<td bgcolor="black" onClick="change_color('black');return false;">&nbsp;</td>
-<td bgcolor="gray" onClick="change_color('gray');return false;">&nbsp;</td>
-
-<td bgcolor="silver" onClick="change_color('silver');return false;">&nbsp;</td>
-<td bgcolor="white" onClick="change_color('white');return false;">&nbsp;</td>
-
-<td bgcolor="navy" onClick="change_color('navy');return false;">&nbsp;</td>
-<td bgcolor="blue" onClick="change_color('blue');return false;">&nbsp;</td>
-
-<td bgcolor="teal" onClick="change_color('teal');return false;">&nbsp;</td>
-<td bgcolor="aqua" onClick="change_color('aqua');return false;">&nbsp;</td>
-
-<td bgcolor="green" onClick="change_color('green');return false;">&nbsp;</td>
-<td bgcolor="olive" onClick="change_color('olive');return false;">&nbsp;</td>
-<td bgcolor="lime" onClick="change_color('lime');return false;">&nbsp;</td>
-
-<td bgcolor="maroon" onClick="change_color('maroon');return false;">&nbsp;</td>
-<td bgcolor="purple" onClick="change_color('purple');return false;">&nbsp;</td>
-
-<td bgcolor="red" onClick="change_color('red');return false;">&nbsp;</td>
-<td bgcolor="fuchsia" onClick="change_color('fuchsia');return false;">&nbsp;</td>
-<td bgcolor="yellow " onClick="change_color('yellow');return false;">&nbsp;</td>
-
-<td><input id="color_status" value="black" type="text" size="8">&nbsp;</td>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="domdoodler.css">
+<script src="domdoodler.js"></script>
+<title>DOM Doodler</title>
+</head>
+<body>
+<noscript><p>Please enable Javascript</p></noscript>
+<form name="doodle" id="doodle">
+<table class="hdr">
+<tr>
+<td><a href="#" onclick="toggleDrawing();return false;">Doodler</a><input id="drawingStatus" value="ON" type="text" size="4">&nbsp;</td>
+<td class="cBlack" onClick="changeColor('black');return false;">&nbsp;</td>
+<td class="cGray" onClick="changeColor('gray');return false;">&nbsp;</td>
+<td class="cSilver" onClick="changeColor('silver');return false;">&nbsp;</td>
+<td class="cWhite" onClick="changeColor('white');return false;">&nbsp;</td>
+<td class="cNavy" onClick="changeColor('navy');return false;">&nbsp;</td>
+<td class="cBlue" onClick="changeColor('blue');return false;">&nbsp;</td>
+<td class="cTeal" onClick="changeColor('teal');return false;">&nbsp;</td>
+<td class="cAqua" onClick="changeColor('aqua');return false;">&nbsp;</td>
+<td class="cGreen" onClick="changeColor('green');return false;">&nbsp;</td>
+<td class="cOlive" onClick="changeColor('olive');return false;">&nbsp;</td>
+<td class="cLime" onClick="changeColor('lime');return false;">&nbsp;</td>
+<td class="cMaroon" onClick="changeColor('maroon');return false;">&nbsp;</td>
+<td class="cPurple" onClick="changeColor('purple');return false;">&nbsp;</td>
+<td class="cRed" onClick="changeColor('red');return false;">&nbsp;</td>
+<td class="cFuchsia" onClick="changeColor('fuchsia');return false;">&nbsp;</td>
+<td class="cYellow" onClick="changeColor('yellow');return false;">&nbsp;</td>
+<td><input id="colorStatus" value="black" type="text" size="8">&nbsp;</td>
 </td>
 </tr>
+</table>
 
-</table> <table width="100%" height="100%" cellpadding="10" cellspacing="0" border="0">
-
+<table class="main">
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 <tr>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
-<td onClick="doodle_click(this);" onMouseOver="doodle_mouseover(this);" >&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
+<td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 </tr>
 </table>
 </form>
-
-</body></html>
+</body>
+</html>

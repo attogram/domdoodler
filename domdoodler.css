@@ -1,0 +1,18 @@
+.hdr { width:100%; background-color:#dfdfdf; border:1px solid #dfdfdf;  border-spacing:5px; border-collapse:separate; }
+.main { width:100%; border-spacing:20px; border-collapse:collapse; }
+.cBlack { background-color:black; }
+.cGray { background-color:gray; }
+.cSilver { background-color:silver; }
+.cWhite { background-color:white; }
+.cNavy { background-color:navy; }
+.cBlue { background-color:blue; }
+.cTeal { background-color:teal; }
+.cAqua { background-color:aqua; }
+.cGreen { background-color:green; }
+.cOlive { background-color:olive; }
+.cLime { background-color:lime; }
+.cMaroon { background-color:maroon; }
+.cPurple { background-color:purple; }
+.cRed { background-color:red; }
+.cFuchsia { background-color:fuchsia; }
+.cYellow { background-color:yellow; }
