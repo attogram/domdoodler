@@ -1,127 +1,122 @@
-<html><head><title>Sandbox Doodle</title></head><script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="domdoodler.css">
+<title>domdoodler sandbox test</title>
+</head>
+<body>
+<noscript><p>Please enable Javascript</p></noscript>
+<script>
 
-var is_drawing = false;
-var active_color = 'black';
+var isDrawing = false;
+var activeColor = 'black';
 var beat = 0;
 
-function change_color( new_color ) {
-  active_color=new_color;
-  document.doodle.color_status.value=active_color;
-  show_event('Change Color: ' + active_color);
+function changeColor(newColor)
+{
+    activeColor = newColor;
+    document.doodle.color_status.value = activeColor;
+    showEvent('Change Color: ' + activeColor);
 }
 
-function m( obj ) { 
-  if(is_drawing) { 
-   obj.style.backgroundColor=active_color; 
-
-   //rr = obj.offsetParent;
-
-   show_event('Mouseover: '
-+ ' ' + obj.cellIndex + 'x?' // + obj
-+ ' ' + obj.offsetTop + 'x' + obj.offsetLeft
-+ ' ' + obj.offsetWidth + 'x' + obj.offsetHeight
-//+ ' nodes=' + obj.childNodes
-//+ ' offsetParent=' + rr.rowIndex
-//+ ' ' + rr.offsetTop + 'x' + rr.offsetLeft
-//+ ' ' + rr.offsetWidth + 'x' + rr.offsetHeight
-);
-
-  }
-}
-function c( obj ) {
-  toggle_drawing();
-  m( obj );
-}
-function toggle_drawing() { 
-  if(is_drawing) { 
-   is_drawing = false;
-   document.doodle.drawing_status.value='Pen OFF'; 
-   show_event('Pen Turned OFF');
-  } else { 
-   is_drawing = true; 
-   document.doodle.drawing_status.value='Pen ON';
-   show_event('Pen Turned ON, color: ' + active_color);
-  }
-}
-function save_as_html() {
-
-  canvas = document.getElementById('canvas');
-
-  out = '<table cellpadding="0" cellspacing="0" border="0" width="100" height="100">';
-  for( x = 0; x < canvas.rows.length; x++ ) {
-    out += '<tr>';
-    for( y = 0; y < canvas.rows[x].cells.length; y++ ) {
-      //show_event('Canvas: ' + x + ' x ' + y + ' =' + canvas.rows[x].cells[y].style.backgroundColor);
-      clr = canvas.rows[x].cells[y].style.backgroundColor;
-      if( clr == '' ) { clr = 'White'; }
-      out = out + '<td style="background-color:' + clr + '" >&nbsp;</td>';
+function m(obj)
+{
+    if (isDrawing) {
+        obj.style.backgroundColor = activeColor;
+        showEvent(
+            'Mouseover: '
+            + ' ' + obj.cellIndex + 'x?' // + obj
+            + ' ' + obj.offsetTop + 'x' + obj.offsetLeft
+            + ' ' + obj.offsetWidth + 'x' + obj.offsetHeight
+        );
     }
-    out = out + '</tr>';
-  }
-  out = out + '</table>';
-
-  show_event(out);
+}
+function c(obj)
+{
+    toggleDrawing();
+    m(obj);
+}
+function toggleDrawing()
+{
+    if(isDrawing) {
+       isDrawing = false;
+       document.doodle.drawing_status.value = 'Pen OFF';
+       showEvent('Pen Turned OFF');
+    } else {
+       isDrawing = true;
+       document.doodle.drawing_status.value = 'Pen ON';
+       showEvent('Pen Turned ON, color: ' + activeColor);
+    }
+}
+function saveAsHTML()
+{
+    canvas = document.getElementById('canvas');
+    out = '<table cellpadding="0" cellspacing="0" border="0" width="100" height="100">';
+    for( x = 0; x < canvas.rows.length; x++ ) {
+        out += '<tr>';
+        for( y = 0; y < canvas.rows[x].cells.length; y++ ) {
+            clr = canvas.rows[x].cells[y].style.backgroundColor;
+            if( clr == '' ) { clr = 'White'; }
+            out = out + '<td style="background-color:' + clr + '" >&nbsp;</td>';
+        }
+        out = out + '</tr>';
+      }
+    out = out + '</table>';
+    showEvent(out);
 }
 
-function show_event( text ) {
-  beat += 1;
-  document.doodle.events.value = beat + ': ' + text + '\n' + document.doodle.events.value;
-} 
-function clear_events() {
-  document.doodle.events.value = '';
+function showEvent(text)
+{
+    beat += 1;
+    document.doodle.events.value = beat + ': ' + text + '\n' + document.doodle.events.value;
+}
+function clearEvents()
+{
+    document.doodle.events.value = '';
 }
 </script>
-</head><body><form name="doodle">
+</head>
+<body>
+<form name="doodle">
 
-<table width="100%" height="98%" cellpadding="0" cellspacing="0" border="0">
+<table class="hdr">
  <tr>
   <td height="10%" valign="top" align="center" bgcolor="#F0F0F0">
-<!-- MASTER TABLE TOP -->
-
-
-<table width="100%" cellpadding="10" cellspacing="0" border="0">
-<tr>
- <td>
-  <a href="/domdoodler/">Doodler Sandbox</a> &nbsp; &nbsp;
-
- </td>
- <td align="right">
-
-<input id="drawing_status" value="Pen OFF" type="text" size="8"> &nbsp; &nbsp;
-Click to <a href="#" onclick="toggle_drawing();return false;">Toggle Pen</a> &nbsp; &nbsp;
-
-</td>
-<td bgcolor="black" 	onClick="change_color('black');return false;">&nbsp;</td>
-
-<td bgcolor="gray" onClick="change_color('gray');return false;">&nbsp;</td>
-<td bgcolor="white" onClick="change_color('white');return false;">&nbsp;</td>
-<td bgcolor="blue" onClick="change_color('blue');return false;">&nbsp;</td>
-<td bgcolor="aqua" onClick="change_color('aqua');return false;">&nbsp;</td>
-<td bgcolor="green" onClick="change_color('green');return false;">&nbsp;</td>
-<td bgcolor="lime" onClick="change_color('lime');return false;">&nbsp;</td>
-<td bgcolor="purple" onClick="change_color('purple');return false;">&nbsp;</td>
-<td bgcolor="red" onClick="change_color('red');return false;">&nbsp;</td>
-<td bgcolor="fuchsia" onClick="change_color('fuchsia');return false;">&nbsp;</td>
-<td bgcolor="yellow " onClick="change_color('yellow');return false;">&nbsp;</td>
-<td><input id="color_status" value="black" type="text" size="8">&nbsp;</td>
-</tr></table>
-
-<p align="left"><a href="#" onclick="save_as_html();return false;">Save as HTML</a></p>
-
-
+    <table width="100%" cellpadding="10" cellspacing="0" border="0">
+     <tr>
+      <td><a href="/domdoodler/">Doodler Sandbox</a> &nbsp; &nbsp;</td>
+      <td align="right">
+        <input id="drawing_status" value="Pen OFF" type="text" size="8"> &nbsp; &nbsp;
+        Click to <a href="#" onclick="toggleDrawing();return false;">Toggle Pen</a> &nbsp; &nbsp;
+      </td>
+      <td bgcolor="black" onClick="changeColor('black');return false;">&nbsp;</td>
+      <td class="cGray" onClick="changeColor('gray');return false;">&nbsp;</td>
+      <td class="cWhite" onClick="changeColor('white');return false;">&nbsp;</td>
+      <td class="cBlue" onClick="changeColor('blue');return false;">&nbsp;</td>
+      <td class="cAqua" onClick="changeColor('aqua');return false;">&nbsp;</td>
+      <td class="cGreen" onClick="changeColor('green');return false;">&nbsp;</td>
+      <td class="cLime" onClick="changeColor('lime');return false;">&nbsp;</td>
+      <td class="cPurple" onClick="changeColor('purple');return false;">&nbsp;</td>
+      <td class="cRed" onClick="changeColor('red');return false;">&nbsp;</td>
+      <td class="cFuchsia" onClick="changeColor('fuchsia');return false;">&nbsp;</td>
+      <td class="cYellow " onClick="changeColor('yellow');return false;">&nbsp;</td>
+      <td><input id="color_status" value="black" type="text" size="8">&nbsp;</td>
+     </tr>
+    </table>
+    <p align="left"><a href="#" onclick="saveAsHTML();return false;">Save as HTML</a></p>
   </td>
  </tr>
  <tr>
   <td height="90%" valign="top" align="center">
-<!--	MASTER CONTENT  -->
-
 
 <table width="20%" cellpadding="10" cellspacing="0" border="1" id="canvas">
 <tr>
 <td class="cv" onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 </tr>
@@ -139,7 +134,6 @@ Click to <a href="#" onclick="toggle_drawing();return false;">Toggle Pen</a> &nb
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 </tr>
-
 <tr>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
 <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
@@ -156,13 +150,12 @@ Click to <a href="#" onclick="toggle_drawing();return false;">Toggle Pen</a> &nb
 </tr>
 </table>
 
-
 <textarea id="events" cols="80" rows="20"></textarea>
-<br /><a href="#" onclick="clear_events();return false;">Clear</a>
+<br /><a href="#" onclick="clearEvents();return false;">Clear</a>
 
   </td>
  </tr>
 </table>
 </form>
-</body></html>
-
+</body>
+</html>
