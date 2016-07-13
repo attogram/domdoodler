@@ -4,45 +4,48 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.hdr { width:100%; background-color:#dfdfdf; border:1px solid #dfdfdf;  border-spacing:5px; border-collapse:separate; }
+.main { width:100%; border-spacing:20px; border-collapse:collapse; }
+</style>
 <title>DOM Doodler</title>
-<script>
-var isDrawing = true;
-var activeColor = 'black';
-function changeColor(newColor)
-{
-    activeColor = newColor;
-    document.doodle.colorStatus.value = activeColor;
-}
-function doodleMouseover(obj)
-{
-    if (isDrawing) {
-        obj.style.backgroundColor = activeColor;
-    }
-}
-function doodleClick(obj)
-{
-    toggleDrawing();
-    doodleMouseover(obj);
-}
-function toggleDrawing()
-{
-    if (isDrawing) {
-        isDrawing = false;
-        document.doodle.drawingStatus.value = 'OFF';
-        return;
-    }
-    isDrawing = true;
-    document.doodle.drawingStatus.value = 'ON';
-}
-</script>
 </head>
 <body>
 <noscript><hr />Please enable Javascript<hr /></noscript>
-
+<script>
+    var isDrawing = true;
+    var activeColor = 'black';
+    function changeColor(newColor)
+    {
+        activeColor = newColor;
+        document.doodle.colorStatus.value = activeColor;
+    }
+    function doodleMouseover(obj)
+    {
+        if (isDrawing) {
+            obj.style.backgroundColor = activeColor;
+        }
+    }
+    function doodleClick(obj)
+    {
+        toggleDrawing();
+        doodleMouseover(obj);
+    }
+    function toggleDrawing()
+    {
+        if (isDrawing) {
+            isDrawing = false;
+            document.doodle.drawingStatus.value = 'OFF';
+            return;
+        }
+        isDrawing = true;
+        document.doodle.drawingStatus.value = 'ON';
+    }
+</script>
 <form name="doodle" id="doodle">
-<table width="100%" cellpadding="4" cellspacing="0" border="1" bgcolor="#DFDFDF"><tr><td>
-<a href="#" onclick="toggleDrawing();return false;">Doodler</a>
-<input id="drawingStatus" value="ON" type="text" size="4">&nbsp;</td>
+<table class="hdr">
+<tr>
+<td><a href="#" onclick="toggleDrawing();return false;">Doodler</a><input id="drawingStatus" value="ON" type="text" size="4">&nbsp;</td>
 <td bgcolor="black" onClick="changeColor('black');return false;">&nbsp;</td>
 <td bgcolor="gray" onClick="changeColor('gray');return false;">&nbsp;</td>
 <td bgcolor="silver" onClick="changeColor('silver');return false;">&nbsp;</td>
@@ -62,8 +65,9 @@ function toggleDrawing()
 <td><input id="colorStatus" value="black" type="text" size="8">&nbsp;</td>
 </td>
 </tr>
+</table>
 
-</table> <table width="100%" height="100%" cellpadding="10" cellspacing="0" border="0">
+<table class="main">
 <tr>
 <td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
 <td onClick="doodleClick(this);" onMouseOver="doodleMouseover(this);">&nbsp;</td>
