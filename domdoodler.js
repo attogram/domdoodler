@@ -1,5 +1,5 @@
 var isDrawing = true;
-var activeColor = 'black';
+var activeColor = "black";
 function changeColor(newColor)
 {
     activeColor = newColor;
@@ -11,18 +11,18 @@ function doodleMouseover(obj)
         obj.style.backgroundColor = activeColor;
     }
 }
-function doodleClick(obj)
-{
-    toggleDrawing();
-    doodleMouseover(obj);
-}
 function toggleDrawing()
 {
     if (isDrawing) {
         isDrawing = false;
-        document.doodle.drawingStatus.value = 'OFF';
+        document.doodle.drawingStatus.value = "OFF";
         return;
     }
     isDrawing = true;
-    document.doodle.drawingStatus.value = 'ON';
+    document.doodle.drawingStatus.value = "ON";
+}
+function doodleClick(obj)
+{
+    toggleDrawing();
+    doodleMouseover(obj);
 }
