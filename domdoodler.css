@@ -1,4 +1,4 @@
-.hdr { width:100%; background-color:#dfdfdf; border:1px solid #dfdfdf;  border-spacing:5px; border-collapse:separate; }
+.hdr { width:100%; background-color:#dfdfdf; }
 .main { width:100%; border-spacing:20px; border-collapse:collapse; }
 .cBlack { background-color:black; }
 .cGray { background-color:gray; }

@@ -4,91 +4,24 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="sandbox.js"></script>
 <link rel="stylesheet" href="domdoodler.css">
 <title>domdoodler sandbox test</title>
 </head>
 <body>
 <noscript><p>Please enable Javascript</p></noscript>
-<script>
-  var isDrawing = false;
-  var activeColor = 'black';
-  var beat = 0;
-
-  function changeColor(newColor)
-  {
-      activeColor = newColor;
-      document.doodle.color_status.value = activeColor;
-      showEvent('Change Color: ' + activeColor);
-  }
-
-  function m(obj)
-  {
-      if (isDrawing) {
-          obj.style.backgroundColor = activeColor;
-          showEvent(
-              'Mouseover: '
-              + ' ' + obj.cellIndex + 'x?' // + obj
-              + ' ' + obj.offsetTop + 'x' + obj.offsetLeft
-              + ' ' + obj.offsetWidth + 'x' + obj.offsetHeight
-          );
-      }
-  }
-  function c(obj)
-  {
-      toggleDrawing();
-      m(obj);
-  }
-  function toggleDrawing()
-  {
-      if(isDrawing) {
-         isDrawing = false;
-         document.doodle.drawing_status.value = 'Pen OFF';
-         showEvent('Pen Turned OFF');
-      } else {
-         isDrawing = true;
-         document.doodle.drawing_status.value = 'Pen ON';
-         showEvent('Pen Turned ON, color: ' + activeColor);
-      }
-  }
-  function saveAsHTML()
-  {
-      canvas = document.getElementById('canvas');
-      out = '<table cellpadding="0" cellspacing="0" border="0" width="100" height="100">';
-      for( x = 0; x < canvas.rows.length; x++ ) {
-          out += '<tr>';
-          for( y = 0; y < canvas.rows[x].cells.length; y++ ) {
-              clr = canvas.rows[x].cells[y].style.backgroundColor;
-              if( clr == '' ) { clr = 'White'; }
-              out = out + '<td style="background-color:' + clr + '" >&nbsp;</td>';
-          }
-          out = out + '</tr>';
-        }
-      out = out + '</table>';
-      showEvent(out);
-  }
-  function showEvent(text)
-  {
-      beat += 1;
-      document.doodle.events.value = beat + ': ' + text + '\n' + document.doodle.events.value;
-  }
-  function clearEvents()
-  {
-      document.doodle.events.value = '';
-  }
-</script>
 <form name="doodle">
-
 <table class="hdr">
  <tr>
-  <td height="10%" valign="top" align="center" bgcolor="#F0F0F0">
-    <table width="100%" cellpadding="10" cellspacing="0" border="0">
+  <td style="height:10%; background-color:#F0F0F0; text-align:center;">
+    <table class="hdr">
      <tr>
       <td><a href="/domdoodler/">Doodler Sandbox</a> &nbsp; &nbsp;</td>
-      <td align="right">
+      <td style="text-align:right;">
         <input id="drawing_status" value="Pen OFF" type="text" size="8"> &nbsp; &nbsp;
         Click to <a href="#" onclick="toggleDrawing();return false;">Toggle Pen</a> &nbsp; &nbsp;
       </td>
-      <td bgcolor="black" onClick="changeColor('black');return false;">&nbsp;</td>
+      <td class="black" onClick="changeColor('black');return false;">&nbsp;</td>
       <td class="cGray" onClick="changeColor('gray');return false;">&nbsp;</td>
       <td class="cWhite" onClick="changeColor('white');return false;">&nbsp;</td>
       <td class="cBlue" onClick="changeColor('blue');return false;">&nbsp;</td>
@@ -102,48 +35,48 @@
       <td><input id="color_status" value="black" type="text" size="8">&nbsp;</td>
      </tr>
     </table>
-    <p align="left"><a href="#" onclick="saveAsHTML();return false;">Save as HTML</a></p>
+    <p><a href="#" onclick="saveAsHTML();return false;">Save as HTML</a></p>
   </td>
  </tr>
  <tr>
-  <td height="90%" valign="top" align="center">
+  <td style="height:90%; text-align:center;">
 
-<table width="20%" cellpadding="10" cellspacing="0" border="1" id="canvas">
-<tr>
-<td class="cv" onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-</tr>
-<tr>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-</tr>
-<tr>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-</tr>
-<tr>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-</tr>
-<tr>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-<td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
-</tr>
+<table class="main" id="canvas" style="border:1px solid black; border-collapse:collapse; width:50%; text-align:center;">
+  <tr>
+  <td class="cv" onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  </tr>
+  <tr>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  </tr>
+  <tr>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  </tr>
+  <tr>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  </tr>
+  <tr>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  <td onClick="c(this);" onMouseOver="m(this);" >&nbsp;</td>
+  </tr>
 </table>
 
 <textarea id="events" cols="80" rows="20"></textarea>
