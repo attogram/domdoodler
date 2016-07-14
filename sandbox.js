@@ -24,11 +24,6 @@ function toggleDrawing()
        showEvent("Pen Turned ON, color: " + activeColor);
     }
 }
-function c(obj)
-{
-    toggleDrawing();
-    m(obj);
-}
 function m(obj)
 {
     if (isDrawing) {
@@ -41,18 +36,26 @@ function m(obj)
         );
     }
 }
+function c(obj)
+{
+    toggleDrawing();
+    m(obj);
+}
 function saveAsHTML()
 {
-    canvas = document.getElementById("canvas");
-    out = '<table cellpadding="0" cellspacing="0" border="0" width="100" height="100">';
+    var canvas = document.getElementById("canvas");
+    var out = "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100\" height=\"100\">";
+    var x;
+    var y;
+    var clr;
     for( x = 0; x < canvas.rows.length; x++ ) {
         out += "<tr>";
         for( y = 0; y < canvas.rows[x].cells.length; y++ ) {
             clr = canvas.rows[x].cells[y].style.backgroundColor;
-            if( clr == "" ) {
+            if( clr === "" ) {
                 clr = "White";
             }
-            out = out + '<td style="background-color:" + clr + "" >&nbsp;</td>';
+            out = out + "<td style=\"background-color:\"" + clr + "\">&nbsp;</td>";
         }
         out = out + "</tr>";
       }
